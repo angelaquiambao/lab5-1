@@ -3,6 +3,12 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
+
+	$(".friends a h3").click( function(event) {
+		event.preventDefault();
+		var anagram = anagrammedName( $(this).text() );
+		$(this).text(anagram);
+	});
 })
 
 /*
@@ -44,3 +50,4 @@ function anagrammedName(name) {
 		return name;
 	}
 }
+
